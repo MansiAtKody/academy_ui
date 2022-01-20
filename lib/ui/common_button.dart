@@ -1,4 +1,5 @@
 import 'package:academy/utils/theme_const.dart';
+import 'package:cupertino_stepper/cupertino_stepper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -77,18 +78,26 @@ class CommonButton extends StatelessWidget with Constant {
   }
 }
 
-class backArrow extends StatelessWidget {
-  const backArrow({
+class backArrow extends StatelessWidget with Constant{
+  final Color? iconColor;
+
+   backArrow({
     Key? key,
-  }) : super(key: key);
+     this.iconColor
+
+  }) : super(key: key,);
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
       top: 49,
       left: 16, child: InkWell(
-        child:Icon(Icons.subdirectory_arrow_left,color: Colors.white,),
+        child:Icon(Icons.subdirectory_arrow_left,color: iconColor,),
         onTap:() {Navigator.pop(context);   }),
     );
   }
 }
+
+
+
+

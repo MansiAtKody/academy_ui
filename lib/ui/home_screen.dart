@@ -21,18 +21,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Stack(
             children: [
               Container(
-                color: Colors.red,
+                color: Colors.grey,
                 height: 385.h,
                 width: 412.w,
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage(
-                //         'assets/Images/home.png'),
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
+
               ),
-       backArrow(),
+       backArrow(iconColor: Constant.white,),
             ],
           ),
 
@@ -40,16 +34,16 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top:16.h),
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: const Text("Get your AePS certification",style: TextStyle(
-                fontSize: 20,
+              child:  Text(Constant.heading,style: TextStyle(
+                fontSize: 20.sp,
               ))),
           ListView.builder(itemCount: 3,
               padding: EdgeInsets.zero,
               shrinkWrap: true,
               itemBuilder: (context, index) {
-            return const ListTile(
+            return  ListTile(
               leading: CircleAvatar(
-                radius: 20,
+                radius: 20.r,
                 backgroundImage: AssetImage('assets/Images/icon.jpg'),
               ),
               title: Text('Title',),
@@ -68,27 +62,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
                CommonButton(
-                label: "i'll do later",
-                onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> MovieScreen()));
-                },
-                borderRadius: 5,
+                label: Constant.doLater,
+                onTap: (){},
+                borderRadius: 5.r,
                 bgColor: Colors.white,
                 labelColor: Constant.navy,
-                textSize: 16,
+                textSize: 16.sp,
                 width: 183.w,
                 borderColor: Constant.btnBorder,
               ),
 
             CommonButton(
-                label: "Get Started",
+                label: Constant.getStarted,
                 onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Congratulation()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> MovieScreen()));
                 }               ,
-                borderRadius: 5,
+                borderRadius: 5.r,
                 bgColor: Constant.navy,
                 labelColor: Colors.white,
-                textSize: 16,
+                textSize: 16.sp,
                 width: 183.w,
               ),
           ],

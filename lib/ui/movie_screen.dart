@@ -1,5 +1,8 @@
+import 'package:academy/ui/Failure_screen.dart';
 import 'package:academy/ui/common_button.dart';
 import 'package:academy/ui/congratulation_screen.dart';
+import 'package:academy/ui/question_screen.dart';
+import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class MovieScreen extends StatefulWidget {
@@ -18,37 +21,36 @@ class _MovieScreenState extends State<MovieScreen> {
           Stack(
             children: [
               Container(
-                color: Colors.black,
                 height: 248.h,
                 width: 412.w,
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage(
-                //         'assets/Images/home.png'),
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/Images/movie.png'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
-              backArrow(),
+              backArrow(iconColor: Constant.white,),
             ],
 
           ),
 
           Container(
-          child: const ListTile(
+          child:  ListTile(
             leading: CircleAvatar(
-              radius: 20,
+              radius: 20.r,
               backgroundImage: AssetImage('assets/Images/icon.jpg'),
             ),
-            title: Text("AePS Knowledge Tutorial"),
-            subtitle: Text("10 min. watch"),
+            title: Text(Constant.movieTitle),
+            subtitle: Text(Constant.watchTime),
           ),
           ),
           Container(
             margin: EdgeInsets.only(top: 45.h),
               alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(left:16),
-              child: const Text("Covering Topics:")),
+              padding:  EdgeInsets.only(left:16.w),
+              child:  Text(Constant.topics)),
       Container(
         padding: const EdgeInsets.symmetric(horizontal:16),
 
@@ -64,7 +66,7 @@ class _MovieScreenState extends State<MovieScreen> {
                 backgroundImage: const AssetImage('assets/Images/icon.jpg'),
               ),
               SizedBox(height: 5.h,),
-              const Text("Whats is AePS?",textAlign: TextAlign.center,)
+               Text(Constant.topicTtile,textAlign: TextAlign.center,)
             ],),
           );
         }),
@@ -81,28 +83,28 @@ class _MovieScreenState extends State<MovieScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CommonButton(
-              label: "proceed",
+              label: Constant.proceed,
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> const MovieScreen()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> const Question()));
               },
-              borderRadius: 5,
-              bgColor: Colors.blue,
-              labelColor: Colors.white,
-              textSize: 16,
-              width: 380.h,
+              borderRadius: 5.r,
+              bgColor: Constant.navy,
+              labelColor: Constant.white,
+              textSize: 16.sp,
+              width: 380.w,
             ),
 
             CommonButton(
-              label: "Skip Tutorial",
+              label: Constant.skipTutorial,
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> const Congratulation()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> const Question()));
               }               ,
-              borderRadius: 5,
-              bgColor: Colors.white,
-              labelColor: Colors.blue,
-              textSize: 16,
-              width: 380.h,
-              borderColor: Colors.black,
+              borderRadius: 5.r,
+              bgColor: Constant.white,
+              labelColor: Constant.navy,
+              textSize: 16.sp,
+              width: 380.w,
+              borderColor: Constant.btnBorder,
 
             ),
           ],

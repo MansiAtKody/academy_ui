@@ -1,6 +1,8 @@
 import 'package:academy/ui/certificate_screen.dart';
 import 'package:academy/ui/common_button.dart';
+import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'congratulation_screen.dart';
 class Failure extends StatefulWidget {
@@ -14,18 +16,18 @@ class _FailureState extends State<Failure> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.pink,
+      backgroundColor: Constant.navy,
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top:204),
+            margin: EdgeInsets.only(top:204.h),
 
       child: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              width: 68.0,
-              height: 105.16,
-              decoration: BoxDecoration(
+              width: 68.w,
+              height: 105.16.h,
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
                           "assets/Images/failure.png"),
@@ -36,52 +38,63 @@ class _FailureState extends State<Failure> {
           ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 26),
+            padding: EdgeInsets.symmetric(vertical: 26.h),
             child: Column(children: [
-              Text("Oops!",style:TextStyle(fontSize: 24),),
-              Text("You failed in the test",style:TextStyle(fontSize: 24)),
+              Text(Constant.oops,style:TextStyle(fontSize: 24.sp,color: Constant.white),),
+              Text(Constant.youfailed,style:TextStyle(fontSize: 24.sp,color: Constant.white)),
 
             ],),),
 
           Container(
-            height: 38,
-            width:290,
-            child: Text("You have not scored the minimum requirement to complete the certification",style:TextStyle(fontSize: 16,),	textAlign: TextAlign.center,
+            height: 38.h,
+            width:290.w,
+            child: Text(Constant.failReason,style:TextStyle(fontSize: 16,color: Constant.white),	textAlign: TextAlign.center,
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical:24),
-            child: Text("Your scores are",style:TextStyle(fontSize: 16)),
+            child: Text(Constant.yourScore,style:TextStyle(fontSize: 16.sp,color: Constant.white)),
           ),
           Container(
-            height: 126,
-            width: 126,
-            decoration: BoxDecoration(shape: BoxShape.circle,border: Border.all(color: Colors.red,width: 8),color: Colors.white),
-            child: Align(
+            height: 126.h,
+            width: 126.w,
+            decoration: BoxDecoration(shape: BoxShape.circle,border: Border.all(color: Colors.red,width: 8.w),color: Colors.white),
+            child:  Align(
               alignment: Alignment.center,
               child: Text(
-                  '60%',
-                  style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold)       ),
+                  Constant.sixty,
+                  style:TextStyle(fontSize: 24.sp,fontWeight: FontWeight.bold,)       ),
             ),          )
 
 
         ],
       ) ,
-        bottomNavigationBar:  Container(
-         padding: EdgeInsets.symmetric(horizontal: 16,vertical: 12),
-          child: CommonButton(
-            label: "Try Again",
-            onTap: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> Certificate()));
-            }               ,
-            borderRadius: 5,
-            bgColor: Colors.white,
-            labelColor: Colors.blue,
-            textSize: 16,
-            width: 170,
-            borderColor: Colors.grey,
-          ),
+      bottomNavigationBar: Container(
+        height: 120.h,
+        padding: const EdgeInsets.all(16),
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            CommonButton(
+              label: Constant.tryAgain,
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> const Certificate()));
+              }               ,
+              borderRadius: 5.r,
+              bgColor: Constant.white,
+              labelColor: Constant.navy,
+              textSize: 16.sp,
+              width: 380.h,
+              borderColor: Constant.btnBorder,
+
+            ),
+            Text(Constant.retry,style:TextStyle(fontSize: 13.sp,color: Constant.white)),
+
+          ],
         ),
+      ),
       );
 
   }
