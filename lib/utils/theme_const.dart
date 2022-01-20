@@ -8,6 +8,8 @@ class Constant{
   static Color black                =   const Color(0xff000000);
   static Color btnBorder            =   const Color(0xffD1D8E7);
   static Color clrGrey              =   const Color(0xff807F7F);
+  static Color rightAns             =   const Color(0xff1CC17D);
+
 
 
   /// String

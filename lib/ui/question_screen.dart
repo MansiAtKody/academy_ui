@@ -196,7 +196,7 @@ class _QuestionState extends State<Question> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               Text(Constant.queName,style:const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+               Text(Constant.queName,style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold),),
               ListView.builder(itemCount: 4,
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -208,23 +208,19 @@ class _QuestionState extends State<Question> {
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Constant.btnBorder,
-
                         ),
-                          borderRadius:  BorderRadius.all( Radius.circular(27.5.r))
-
-                      ),
-
+                          borderRadius:  BorderRadius.all( Radius.circular(27.5.r)),
+                     color: (index==0) ?Constant.rightAns:Constant.white,
+                    ),
                       child: Row(
                         children: [
                           Container(
                             margin: const EdgeInsets.all(16),
-
                             height: 26.h,
                             width: 26.w,
                             decoration: BoxDecoration(shape: BoxShape.circle,border: Border.all(color: Constant.btnBorder),),
                             child:  Align(
                               alignment: Alignment.center,
-
                               child: Text(
                                   'A',
                                   style:TextStyle(fontSize: 10.sp,)             ),
