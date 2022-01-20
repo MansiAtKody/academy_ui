@@ -75,7 +75,7 @@ class _MovieScreenState extends State<MovieScreen> {
       ),
       bottomNavigationBar: Container(
         height: 156.h,
-        padding: const EdgeInsets.all( 16),
+        padding: const EdgeInsets.all(16),
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

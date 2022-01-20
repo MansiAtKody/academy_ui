@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 bgColor: Colors.white,
                 labelColor: Constant.navy,
                 textSize: 16,
-                width: 170.w,
+                width: 183.w,
                 borderColor: Constant.btnBorder,
               ),
 
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 bgColor: Constant.navy,
                 labelColor: Colors.white,
                 textSize: 16,
-                width: 170,
+                width: 183.w,
               ),
           ],
         ),
