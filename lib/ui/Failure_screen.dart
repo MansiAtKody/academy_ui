@@ -1,5 +1,6 @@
 import 'package:academy/ui/certificate_screen.dart';
 import 'package:academy/ui/common_button.dart';
+import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,20 +41,20 @@ class _FailureState extends State<Failure> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 26.h),
             child: Column(children: [
-              Text(Constant.oops,style:TextStyle(fontSize: 24.sp,color: Constant.white),),
-              Text(Constant.youfailed,style:TextStyle(fontSize: 24.sp,color: Constant.white)),
+              Text(Constant.oops,style:TextStyles.txtMedium24.copyWith(color: Constant.white),),
+              Text(Constant.youfailed,style:TextStyles.txtMedium24.copyWith(color: Constant.white),)
 
             ],),),
 
           Container(
             height: 38.h,
             width:290.w,
-            child: Text(Constant.failReason,style:TextStyle(fontSize: 16,color: Constant.white),	textAlign: TextAlign.center,
+            child: Text(Constant.failReason,style:TextStyles.txtRegular16,	textAlign: TextAlign.center,
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical:24),
-            child: Text(Constant.yourScore,style:TextStyle(fontSize: 16.sp,color: Constant.white)),
+            child: Text(Constant.yourScore,style:TextStyles.txtRegular16),
           ),
           Container(
             height: 126.h,
@@ -90,7 +91,7 @@ class _FailureState extends State<Failure> {
               borderColor: Constant.btnBorder,
 
             ),
-            Text(Constant.retry,style:TextStyle(fontSize: 13.sp,color: Constant.white)),
+            Text(Constant.retry,style:TextStyles.txtRegular13),
 
           ],
         ),

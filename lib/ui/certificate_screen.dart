@@ -1,5 +1,6 @@
 import 'package:academy/ui/Failure_screen.dart';
 import 'package:academy/ui/common_button.dart';
+import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class _CertificateState extends State<Certificate> {
                         image: DecorationImage(
                             image: AssetImage(
                                 "assets/Images/topClip.png"),
-                            fit: BoxFit.cover
+                            fit: BoxFit.fill
                         )
                     ),) )
             ],
@@ -63,7 +64,7 @@ class _CertificateState extends State<Certificate> {
             alignment: Alignment.topLeft,
             margin:  EdgeInsets.only(top:32.h),
             padding:  EdgeInsets.only(left: 16.w),
-            child:  Text(Constant.certiTitle,style:TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold),),
+            child:  Text(Constant.certiTitle,style:TextStyles.txtMedium20,),
           ),
           Container(
             margin:  EdgeInsets.only(top:21.h),
@@ -92,10 +93,8 @@ class _CertificateState extends State<Certificate> {
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context)=> const Failure()));
               },
-              borderRadius: 5,
               bgColor: Constant.navy,
               labelColor: Constant.white,
-              textSize: 16.sp,
               width: 380.h,
             ),
           ),
@@ -109,10 +108,8 @@ class _CertificateState extends State<Certificate> {
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context)=> const Congratulation()));
               }               ,
-              borderRadius: 5,
               bgColor: Constant.white,
               labelColor: Constant.navy,
-              textSize: 16.sp,
               width: 380.h,
               borderColor: Constant.btnBorder,
 

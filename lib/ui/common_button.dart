@@ -2,6 +2,7 @@ import 'package:academy/utils/theme_const.dart';
 import 'package:cupertino_stepper/cupertino_stepper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommonButton extends StatelessWidget with Constant {
   final String label;
@@ -47,14 +48,14 @@ class CommonButton extends StatelessWidget with Constant {
           padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0.0)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(borderRadius??10),
+                borderRadius: BorderRadius.circular(borderRadius??5),
                 side: BorderSide(color: !isEnable ? Constant.clrGrey : borderColor ?? bgColor ?? Constant.navy)),
           ),
           backgroundColor: MaterialStateProperty.all<Color>(!isEnable ? Constant.clrGrey:bgColor ?? Constant.navy),
         ),
         child: Ink(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(5.r)),
           child: Container(
               padding: EdgeInsets.symmetric(horizontal:padding??0),
               alignment: Alignment.center,
@@ -66,9 +67,9 @@ class CommonButton extends StatelessWidget with Constant {
                     label,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize:16,
+                        fontSize:16.sp,
                         color: labelColor ,
-                        fontWeight: fontWeight ?? FontWeight.bold),
+                        fontWeight: fontWeight ?? Constant().fwMedium),
                   ),
                 ],
               )),
@@ -90,8 +91,8 @@ class backArrow extends StatelessWidget with Constant{
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 49,
-      left: 16, child: InkWell(
+      top: 49.h,
+      left: 16.w, child: InkWell(
         child:Icon(Icons.subdirectory_arrow_left,color: iconColor,),
         onTap:() {Navigator.pop(context);   }),
     );

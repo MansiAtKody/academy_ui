@@ -38,7 +38,7 @@ class _QuestionState extends State<Question> {
                     image: DecorationImage(
                         image: AssetImage(
                             "assets/Images/topClip.png"),
-                        fit: BoxFit.cover
+                        fit: BoxFit.fill
                     )
                 ),) )
             ],
@@ -58,7 +58,7 @@ class _QuestionState extends State<Question> {
                   image: DecorationImage(
                       image: AssetImage(
                           "assets/Images/academyLogo.png"),
-                      fit: BoxFit.cover
+                      fit: BoxFit.fill
                   )
               ),
             ),
@@ -80,18 +80,18 @@ class _QuestionState extends State<Question> {
                   ),
                   child: Stepper( type: StepperType.horizontal,steps:  getSteps(),currentStep: currentStep,
                   onStepTapped: (step)=>setState(()=>currentStep= step),
-                    onStepContinue: (){
-                    final isLastStep = currentStep == getSteps().length-1;
-                    if(isLastStep){
-
-                    }
-                    else {
-                      setState(() => currentStep += 1);
-                    }
-                    },
-                  onStepCancel: (){
-                    /*currentStep==0?null:()=> */setState(() => currentStep-=1);
-                  },
+                  //   onStepContinue: (){
+                  //   final isLastStep = currentStep == getSteps().length-1;
+                  //   if(isLastStep){
+                  //
+                  //   }
+                  //   else {
+                  //     setState(() => currentStep += 1);
+                  //   }
+                  //   },
+                  // onStepCancel: (){
+                  //   /*currentStep==0?null:()=> */setState(() => currentStep-=1);
+                  // },
                     controlsBuilder: (context,details ) {
                         return Row(
                           children: [
@@ -126,8 +126,9 @@ class _QuestionState extends State<Question> {
             CommonButton(
               label: Constant.skip,
               onTap: (){
-                currentStep==0?Navigator.push(context,MaterialPageRoute(builder: (context)=> const Failure()))
-                    :()=>setState(() => currentStep-=1);
+               /* currentStep==0?*/
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> const Failure()));
+                   /* :()=>setState(() => currentStep-=1);*/
               },
               borderRadius: 5.r,
               bgColor: Colors.white,
@@ -146,6 +147,7 @@ class _QuestionState extends State<Question> {
                 }
                 else {
                   setState(() => currentStep += 1);
+
                 }
               }               ,
               borderRadius: 5.r,

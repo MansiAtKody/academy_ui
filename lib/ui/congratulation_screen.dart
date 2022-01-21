@@ -1,3 +1,4 @@
+import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,12 +56,12 @@ Container(
   width: 302.w,
   padding: EdgeInsets.symmetric(vertical: 26.w),
   child: Column(children: [
-  Text(Constant.congratulation,style:TextStyle(fontSize: 24.sp,color: Constant.white),textAlign: TextAlign.center,),
+  Text(Constant.congratulation,style:TextStyles.txtMedium24.copyWith(color: Constant.white),textAlign: TextAlign.center,),
 
 ],),),
           Padding(
             padding:  EdgeInsets.symmetric(vertical:24.0.w),
-            child: Text(Constant.yourScore,style:TextStyle(fontSize: 16.sp,color: Constant.white)),
+            child: Text(Constant.yourScore,style:TextStyles.txtRegular16),
           ),
           Container(
             height: 126.h,
@@ -70,7 +71,7 @@ Container(
               alignment: Alignment.center,
               child: Text(
                 Constant.hundred,
-                  style:TextStyle(fontSize: 24.sp,fontWeight: FontWeight.bold) ,textAlign: TextAlign.center            ),
+                  style:TextStyles.txtMedium24,textAlign: TextAlign.center            ),
             ),          )
 
 

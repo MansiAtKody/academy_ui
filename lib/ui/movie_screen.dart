@@ -45,32 +45,29 @@ class _MovieScreenState extends State<MovieScreen> {
               backgroundImage: AssetImage('assets/Images/icon.jpg'),
             ),
             title: Text(Constant.movieTitle,style: TextStyles.txtMedium18,),
-            subtitle: Text(Constant.watchTime),
+            subtitle: Text(Constant.watchTime,style: TextStyles.txtRegular14.copyWith(color: Constant.clrGrey),),
           ),
           ),
           Container(
               alignment: Alignment.topLeft,
               padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 25.h),
-              child:  Text(Constant.topics)),
+              child:  Text(Constant.topics,style: TextStyles.txtMedium16,)),
       Expanded(
         child: Container(
           padding:  EdgeInsets.symmetric(horizontal:16.w),
 
           child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            crossAxisSpacing: 19.w,
-            mainAxisSpacing: 19.h,
-          ),shrinkWrap: true ,itemCount: 12, itemBuilder:( context,index){
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal:8),
-              child: Column(children: [
-                const CircleAvatar(
-                  backgroundImage: const AssetImage('assets/Images/icon.jpg'),
-                ),
-                SizedBox(height: 5.h,),
-                 Text(Constant.topicTtile,textAlign: TextAlign.center,)
-              ],),
-            );
+            crossAxisSpacing: 5.w,
+            mainAxisSpacing: 0.h,
+          ),shrinkWrap: true ,itemCount: 5, itemBuilder:( context,index){
+            return Column(children: [
+              const CircleAvatar(
+                backgroundImage: const AssetImage('assets/Images/icon.jpg'),
+              ),
+              SizedBox(height: 5.h,),
+               Text(Constant.topicTtile,style: TextStyles.txtRegular14, textAlign: TextAlign.center,)
+            ],);
           }),
         ),
       ),
@@ -90,10 +87,8 @@ color: Constant.white,
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context)=> const Question()));
               },
-              borderRadius: 5.r,
               bgColor: Constant.navy,
               labelColor: Constant.white,
-              textSize: 16.sp,
               width: 380.w,
             ),
 
@@ -102,10 +97,8 @@ color: Constant.white,
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context)=> const Question()));
               }               ,
-              borderRadius: 5.r,
               bgColor: Constant.white,
               labelColor: Constant.navy,
-              textSize: 16.sp,
               width: 380.w,
               borderColor: Constant.btnBorder,
 
