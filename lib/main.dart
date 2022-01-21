@@ -1,9 +1,6 @@
 import 'package:academy/ui/home_screen.dart';
-import 'package:academy/ui/movie_screen.dart';
-import 'package:academy/ui/question_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +22,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
         ),
-
         home: MyHomePage(),
       ),
     );

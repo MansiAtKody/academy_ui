@@ -6,6 +6,7 @@ import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -25,73 +26,75 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.grey,
                 height: 385.h,
                 width: 412.w,
-
               ),
-       backArrow(iconColor: Constant.white,),
+              backArrow(
+                iconColor: Constant.white,
+              ),
             ],
           ),
-
           Container(
-            alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(top:16.h),
-              padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
-              child:  Text(Constant.heading,style: TextStyles.txtMedium20)),
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.only(top: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              child: Text(Constant.heading, style: TextStyles.txtMedium20)),
           Expanded(
-            child: ListView.builder(itemCount: 5,
+            child: ListView.builder(
+                itemCount: 5,
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-              return  ListTile(
-                leading: CircleAvatar(
-                  radius: 20.r,
-                  backgroundImage: AssetImage('assets/Images/icon.jpg'),
-                ),
-                title: Text('Title',style: TextStyles.txtBold16,),
-                subtitle: Text('Subtitle',style: TextStyles.txtRegular14,),
-              );
-
-    }
-    ),
+                  return ListTile(
+                    leading: CircleAvatar(
+                      radius: 20.r,
+                      backgroundImage: AssetImage('assets/Images/icon.jpg'),
+                    ),
+                    title: Text(
+                      'Title',
+                      style: TextStyles.txtBold16,
+                    ),
+                    subtitle: Text(
+                      'Subtitle',
+                      style: TextStyles.txtRegular14,
+                    ),
+                  );
+                }),
           )
         ],
       ),
       bottomNavigationBar: Container(
-          height: 100.h,
+        height: 100.h,
         color: Constant.white,
-
-        padding:  EdgeInsets.symmetric(horizontal: 16.w,),
-
+        padding: EdgeInsets.symmetric(
+          horizontal: 16.w,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-               CommonButton(
-                label: Constant.doLater,
-                onTap: (){},
-                borderRadius: 5.r,
-                bgColor: Colors.white,
-                labelColor: Constant.navy,
-                textSize: 16.sp,
-                width: 183.w,
-                borderColor: Constant.btnBorder,
-              ),
-
             CommonButton(
-                label: Constant.getStarted,
-                onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> MovieScreen()));
-                }               ,
-                borderRadius: 5.r,
-                bgColor: Constant.navy,
-                labelColor: Colors.white,
-                textSize: 16.sp,
-                width: 183.w,
-              ),
+              label: Constant.doLater,
+              onTap: () {},
+              borderRadius: 5.r,
+              bgColor: Colors.white,
+              labelColor: Constant.navy,
+              textSize: 16.sp,
+              width: 183.w,
+              borderColor: Constant.btnBorder,
+            ),
+            CommonButton(
+              label: Constant.getStarted,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MovieScreen()));
+              },
+              borderRadius: 5.r,
+              bgColor: Constant.navy,
+              labelColor: Colors.white,
+              textSize: 16.sp,
+              width: 183.w,
+            ),
           ],
         ),
       ),
-
     );
   }
 }
-
-
