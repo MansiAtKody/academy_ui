@@ -2,6 +2,7 @@ import 'package:academy/ui/Failure_screen.dart';
 import 'package:academy/ui/common_button.dart';
 import 'package:academy/ui/congratulation_screen.dart';
 import 'package:academy/ui/question_screen.dart';
+import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,39 +38,41 @@ class _MovieScreenState extends State<MovieScreen> {
           ),
 
           Container(
+            margin: EdgeInsets.only(top: 51.h),
           child:  ListTile(
             leading: CircleAvatar(
               radius: 20.r,
               backgroundImage: AssetImage('assets/Images/icon.jpg'),
             ),
-            title: Text(Constant.movieTitle),
+            title: Text(Constant.movieTitle,style: TextStyles.txtMedium18,),
             subtitle: Text(Constant.watchTime),
           ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 45.h),
               alignment: Alignment.topLeft,
-              padding:  EdgeInsets.only(left:16.w),
+              padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 25.h),
               child:  Text(Constant.topics)),
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal:16),
+      Expanded(
+        child: Container(
+          padding:  EdgeInsets.symmetric(horizontal:16.w),
 
-        child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 19.w,
-          mainAxisSpacing: 19.h,
-        ),shrinkWrap: true ,itemCount: 6, itemBuilder:( context,index){
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal:8),
-            child: Column(children: [
-              const CircleAvatar(
-                backgroundImage: const AssetImage('assets/Images/icon.jpg'),
-              ),
-              SizedBox(height: 5.h,),
-               Text(Constant.topicTtile,textAlign: TextAlign.center,)
-            ],),
-          );
-        }),
+          child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 19.w,
+            mainAxisSpacing: 19.h,
+          ),shrinkWrap: true ,itemCount: 12, itemBuilder:( context,index){
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal:8),
+              child: Column(children: [
+                const CircleAvatar(
+                  backgroundImage: const AssetImage('assets/Images/icon.jpg'),
+                ),
+                SizedBox(height: 5.h,),
+                 Text(Constant.topicTtile,textAlign: TextAlign.center,)
+              ],),
+            );
+          }),
+        ),
       ),
 
 
@@ -78,7 +81,7 @@ class _MovieScreenState extends State<MovieScreen> {
       bottomNavigationBar: Container(
         height: 156.h,
         padding: const EdgeInsets.all(16),
-
+color: Constant.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

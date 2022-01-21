@@ -39,13 +39,13 @@ class _CongratulationState extends State<Congratulation> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                width: 105.0.w,
-                height: 99.16.h,
+                width: 105.16.w,
+                height: 99.2.h,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
                             "assets/Images/done.png"),
-                        fit: BoxFit.cover
+                        fit: BoxFit.fill
                     )
                 ),
               ),
