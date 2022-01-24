@@ -1,6 +1,4 @@
-import 'package:academy/ui/Failure_screen.dart';
 import 'package:academy/ui/common_button.dart';
-import 'package:academy/ui/congratulation_screen.dart';
 import 'package:academy/ui/movie_screen.dart';
 import 'package:academy/utils/font_style.dart';
 import 'package:academy/utils/theme_const.dart';
@@ -18,7 +16,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
@@ -32,11 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
+          SizedBox(height: 35.86.h,),
           Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(top: 16.h),
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, ),
               child: Text(Constant.heading, style: TextStyles.txtMedium20)),
+          SizedBox(height: 38.h,),
+
           Expanded(
             child: ListView.builder(
                 itemCount: 5,
@@ -61,40 +63,67 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
+      // bottomNavigationBar: Container(
+      //   height: 100.h,
+      //   color: Constant.white,
+      //   padding: EdgeInsets.symmetric(horizontal: 16.w),
+      //
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       CommonButton(
+      //         label: Constant.doLater,
+      //         onTap: () {},
+      //         bgColor: Colors.white,
+      //         labelColor: Constant.navy,
+      //         borderColor: Constant.btnBorder,
+      //       ),
+      //       CommonButton(
+      //         label: Constant.getStarted,
+      //         onTap: () {
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => MovieScreen()));
+      //         },
+      //         bgColor: Constant.navy,
+      //         labelColor: Colors.white,
+      //         ),
+      //     ],
+      //   ),
+      // ),
       bottomNavigationBar: Container(
-        height: 100.h,
-        color: Constant.white,
+        height:100.h,
         padding: EdgeInsets.symmetric(
           horizontal: 16.w,
         ),
+        color: Constant.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CommonButton(
-              label: Constant.doLater,
+              label: Constant.skip,
               onTap: () {},
-              borderRadius: 5.r,
-              bgColor: Colors.white,
+              bgColor: Constant.white,
               labelColor: Constant.navy,
-              textSize: 16.sp,
               width: 183.w,
               borderColor: Constant.btnBorder,
             ),
             CommonButton(
-              label: Constant.getStarted,
+              label: Constant.next,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MovieScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MovieScreen()));
+
               },
-              borderRadius: 5.r,
               bgColor: Constant.navy,
-              labelColor: Colors.white,
-              textSize: 16.sp,
+              labelColor: Constant.white,
               width: 183.w,
             ),
           ],
         ),
       ),
+
     );
   }
 }

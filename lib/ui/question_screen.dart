@@ -18,6 +18,8 @@ class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+
       body: Column(
         children: [
           Stack(
@@ -67,7 +69,7 @@ class _QuestionState extends State<Question> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              height: 500.h,
+              height: 428.h,
               width: 412.w,
               child: Theme(
                 data: Theme.of(context).copyWith(
@@ -76,33 +78,8 @@ class _QuestionState extends State<Question> {
                   type: StepperType.horizontal, steps: getSteps(),
                   currentStep: currentStep,
                   onStepTapped: (step) => setState(() => currentStep = step),
-                  //   onStepContinue: (){
-                  //   final isLastStep = currentStep == getSteps().length-1;
-                  //   if(isLastStep){
-                  //
-                  //   }
-                  //   else {
-                  //     setState(() => currentStep += 1);
-                  //   }
-                  //   },
-                  // onStepCancel: (){
-                  //   /*currentStep==0?null:()=> */setState(() => currentStep-=1);
-                  // },
                   controlsBuilder: (context, details) {
-                    return Row(
-                      children: [
-                        CommonButton(
-                          label: "Skip",
-                          onTap: () {},
-                          width: 0.w,
-                        ),
-                        CommonButton(
-                          label: "Next",
-                          onTap: () {},
-                          width: 0.w,
-                        ),
-                      ],
-                    );
+                    return Flexible(child: SizedBox());
                   },
                 ),
               ),
@@ -111,7 +88,7 @@ class _QuestionState extends State<Question> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 100.h,
+        height:100.h,
         padding: EdgeInsets.symmetric(
           horizontal: 16.w,
         ),
@@ -127,10 +104,8 @@ class _QuestionState extends State<Question> {
                     MaterialPageRoute(builder: (context) => const Failure()));
                 /* :()=>setState(() => currentStep-=1);*/
               },
-              borderRadius: 5.r,
-              bgColor: Colors.white,
+              bgColor: Constant.white,
               labelColor: Constant.navy,
-              textSize: 16.sp,
               width: 183.w,
               borderColor: Constant.btnBorder,
             ),
@@ -147,10 +122,8 @@ class _QuestionState extends State<Question> {
                   setState(() => currentStep += 1);
                 }
               },
-              borderRadius: 5.r,
               bgColor: Constant.navy,
-              labelColor: Colors.white,
-              textSize: 16.sp,
+              labelColor: Constant.white,
               width: 183.w,
             ),
           ],
@@ -163,64 +136,60 @@ class _QuestionState extends State<Question> {
         Step(
             isActive: currentStep >= 0,
             title: const Text(""),
-            content: Container(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      Constant.queName,
-                      style: TextStyle(
-                          fontSize: 20.sp, fontWeight: FontWeight.bold),
-                    ),
-                    SingleChildScrollView(
-                      child: ListView.builder(
-                          itemCount: 4,
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              margin: EdgeInsets.symmetric(vertical: 8.5.h),
-                              height: 55.h,
-                              width: 380.w,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Constant.btnBorder,
+            content: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    Constant.queName,
+                    style: TextStyle(
+                        fontSize: 20.sp, fontWeight: FontWeight.bold),
+                  ),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 4,
+                      padding: EdgeInsets.zero,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.symmetric(vertical: 8.5.h),
+                          height: 55.h,
+                          width: 380.w,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Constant.btnBorder,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(27.5.r)),
+                            color: (index == 0)
+                                ? Constant.rightAns
+                                : Constant.white,
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.all(16),
+                                height: 26.h,
+                                width: 26.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border:
+                                      Border.all(color: Constant.btnBorder),
                                 ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(27.5.r)),
-                                color: (index == 0)
-                                    ? Constant.rightAns
-                                    : Constant.white,
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text('A',
+                                      style: TextStyle(
+                                        fontSize: 10.sp,
+                                      )),
+                                ),
                               ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(16),
-                                    height: 26.h,
-                                    width: 26.w,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border:
-                                          Border.all(color: Constant.btnBorder),
-                                    ),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      child: Text('A',
-                                          style: TextStyle(
-                                            fontSize: 10.sp,
-                                          )),
-                                    ),
-                                  ),
-                                  Text(Constant.option,
-                                      style: TextStyle(fontSize: 14.sp)),
-                                ],
-                              ),
-                            );
-                          }),
-                    )
-                  ],
-                ),
+                              Text(Constant.option,
+                                  style: TextStyle(fontSize: 14.sp)),
+                            ],
+                          ),
+                        );
+                      })
+                ],
               ),
             )),
         Step(

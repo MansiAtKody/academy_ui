@@ -39,7 +39,7 @@ class CommonButton extends StatelessWidget with Constant {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 48,
+      height: height ?? 48.h,
       width: width ?? double.infinity,
       child: ElevatedButton(
         onPressed: isEnable ? onTap : null,
@@ -48,7 +48,7 @@ class CommonButton extends StatelessWidget with Constant {
           padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0.0)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(borderRadius ?? 5),
+                borderRadius: BorderRadius.circular(borderRadius ?? 5.r),
                 side: BorderSide(
                     color: !isEnable
                         ? Constant.clrGrey

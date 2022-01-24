@@ -14,19 +14,21 @@ class _CongratulationState extends State<Congratulation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Constant.navy,
       body: Column(
         children: [
-          Container(
-            width: 393.w,
-            height: 181.h,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/Images/glitter.png"),
-                    fit: BoxFit.cover)),
+          Flexible(
+            child: Container(
+              // width: 412.w,
+              height: 181.h,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/Images/glitter.png"),
+                      fit: BoxFit.cover)),
+            ),
           ),
           Container(
-            width: 393.w,
             height: 181.h,
             decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -44,23 +46,15 @@ class _CongratulationState extends State<Congratulation> {
               ),
             ),
           ),
-          Container(
-            width: 302.w,
-            padding: EdgeInsets.symmetric(vertical: 26.w),
-            child: Column(
-              children: [
-                Text(
-                  Constant.congratulation,
-                  style: TextStyles.txtMedium24.copyWith(color: Constant.white),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
+          SizedBox(height: 25.57.h,),
+          Text(
+            Constant.congratulation,
+            style: TextStyles.txtMedium24.copyWith(color: Constant.white),
+            textAlign: TextAlign.center,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 24.0.w),
-            child: Text(Constant.yourScore, style: TextStyles.txtRegular16),
-          ),
+          SizedBox(height: 57.23.h,),
+          Text(Constant.yourScore, style: TextStyles.txtRegular16),
+          SizedBox(height: 24.h,),
           Container(
             height: 126.h,
             width: 126.w,

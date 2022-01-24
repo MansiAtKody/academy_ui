@@ -18,74 +18,66 @@ class _CertificateState extends State<Certificate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 42.74.h,
-                width: 412.w,
-              ),
-              Positioned(
-                  right: 31.66.w,
-                  child: Container(
-                    height: 42.74.h,
-                    width: 110.34.w,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/Images/topClip.png"),
-                            fit: BoxFit.fill)),
-                  ))
-            ],
-          ),
-          Container(
-              alignment: Alignment.topLeft,
-              padding: EdgeInsets.only(left: 16.w),
-              child: backArrow()),
-          Container(
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(top: 20.h),
-            padding: EdgeInsets.only(left: 16.w),
-            child: Container(
-              height: 65.h,
-              width: 62.42.w,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/Images/academyLogo.png"),
-                      fit: BoxFit.cover)),
+      resizeToAvoidBottomInset: false,
+
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height: 42.74.h,
+                  width: 412.w,
+                ),
+                Positioned(
+                    right: 31.66.w,
+                    child: Container(
+                      height: 42.74.h,
+                      width: 110.34.w,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/Images/topClip.png"),
+                              fit: BoxFit.fill)),
+                    ))
+              ],
             ),
-          ),
-          Container(
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(top: 32.h),
-            padding: EdgeInsets.only(left: 16.w),
-            child: Text(
+            Container(
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.only(left: 16.w),
+                child: backArrow()),
+            Container(
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(top: 20.h),
+              padding: EdgeInsets.only(left: 16.w),
+              child: Container(
+                height: 65.h,
+                width: 62.42.w,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/Images/academyLogo.png"),
+                        fit: BoxFit.fill)),
+              ),
+            ),
+            SizedBox(height: 32.h,),
+            Text(
               Constant.certiTitle,
               style: TextStyles.txtMedium20,
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 21.h),
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: 402.w,
-                height: 286.h,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/Images/certificate.png"),
-                        fit: BoxFit.cover)),
-              ),
+            SizedBox(height: 21.h,),
+
+            Container(
+              height: 286.h,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/Images/certificate.png"),
+                      fit: BoxFit.fill)),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 34.h),
-            child: CommonButton(
-              icon: const Icon(
-                Icons.subdirectory_arrow_left,
-                color: Colors.red,
-              ),
+            SizedBox(height: 34.h,),
+
+            CommonButton(
               label: Constant.downloadCerti,
               onTap: () {
                 Navigator.push(context,
@@ -93,16 +85,10 @@ class _CertificateState extends State<Certificate> {
               },
               bgColor: Constant.navy,
               labelColor: Constant.white,
-              width: 380.h,
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 24.5.h),
-            child: CommonButton(
-              icon: const Icon(
-                Icons.subdirectory_arrow_left,
-                color: Colors.red,
-              ),
+            SizedBox(height: 24.5.h,),
+
+            CommonButton(
               label: Constant.shareCerti,
               onTap: () {
                 Navigator.push(
@@ -112,11 +98,10 @@ class _CertificateState extends State<Certificate> {
               },
               bgColor: Constant.white,
               labelColor: Constant.navy,
-              width: 380.h,
               borderColor: Constant.btnBorder,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

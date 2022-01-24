@@ -19,39 +19,38 @@ class _FailureState extends State<Failure> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constant.navy,
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
+          Flexible(
+              child: SizedBox(
+            height: 204.h,
+          )),
           Container(
-            margin: EdgeInsets.only(top: 204.h),
             child: Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.center,
               child: Container(
-                width: 68.w,
-                height: 105.16.h,
+                width: 68.21.w,
+                height: 105.h,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/Images/failure.png"),
-                        fit: BoxFit.cover)),
+                        fit: BoxFit.fill)),
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 26.h),
-            child: Column(
-              children: [
-                Text(
-                  Constant.oops,
-                  style: TextStyles.txtMedium24.copyWith(color: Constant.white),
-                ),
-                Text(
-                  Constant.youfailed,
-                  style: TextStyles.txtMedium24.copyWith(color: Constant.white),
-                )
-              ],
-            ),
+          SizedBox(
+            height: 23.h,
           ),
-          Container(
-            height: 38.h,
+          Text(
+            Constant.oopsYoufailed,
+            style: TextStyles.txtMedium24.copyWith(color: Constant.white),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: 19.h,
+          ),
+          SizedBox(
             width: 290.w,
             child: Text(
               Constant.failReason,
@@ -59,10 +58,10 @@ class _FailureState extends State<Failure> {
               textAlign: TextAlign.center,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24),
-            child: Text(Constant.yourScore, style: TextStyles.txtRegular16),
-          ),
+          SizedBox(height: 50.h,),
+          Text(Constant.yourScore, style: TextStyles.txtRegular16),
+          SizedBox(height: 24.h,),
+
           Container(
             height: 126.h,
             width: 126.w,
@@ -83,9 +82,9 @@ class _FailureState extends State<Failure> {
       ),
       bottomNavigationBar: Container(
         height: 120.h,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             CommonButton(
               label: Constant.tryAgain,
@@ -95,11 +94,8 @@ class _FailureState extends State<Failure> {
                     MaterialPageRoute(
                         builder: (context) => const Certificate()));
               },
-              borderRadius: 5.r,
               bgColor: Constant.white,
               labelColor: Constant.navy,
-              textSize: 16.sp,
-              width: 380.h,
               borderColor: Constant.btnBorder,
             ),
             Text(Constant.retry, style: TextStyles.txtRegular13),

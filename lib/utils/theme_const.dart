@@ -43,7 +43,8 @@ class Constant{
   static String option          =           "Aadhaar Establish Pay Services";
 
   //Screen - 8
-  static String congratulation  =           "Congratulations! You've successfully passed";
+  static String congratulation  =           '''Congratulations!
+  You've successfully passed''';
   static String yourScore       =           "Your scores are";
   static String hundred         =           "100%";
 
@@ -53,8 +54,8 @@ class Constant{
   static String certiTitle      =          "Congrats! You're certified";
 
   //Screen - 11
-  static String oops            =          "Oops!";
-  static String youfailed       =          "You failed in the test";
+  static String oopsYoufailed           =   '''Oops!
+  You failed in the test''';
   static String failReason      =          "You have not scored the minimum requirement to complete the certification";
   static String sixty           =          "60%";
   static String retry           =          "Retry the training and complete certification";

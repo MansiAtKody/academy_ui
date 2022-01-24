@@ -18,6 +18,8 @@ class _MovieScreenState extends State<MovieScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+
       body: Column(
         children: [
           Stack(
@@ -100,7 +102,7 @@ class _MovieScreenState extends State<MovieScreen> {
         padding: const EdgeInsets.all(16),
         color: Constant.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             CommonButton(
               label: Constant.proceed,
