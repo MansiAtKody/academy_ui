@@ -79,6 +79,8 @@ class _CertificateState extends State<Certificate> {
 
             CommonButton(
               label: Constant.downloadCerti,
+
+              // img: "assets/Images/download.png",
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Failure()));
@@ -90,6 +92,7 @@ class _CertificateState extends State<Certificate> {
 
             CommonButton(
               label: Constant.shareCerti,
+              // img: "assets/Images/share.png",
               onTap: () {
                 Navigator.push(
                     context,

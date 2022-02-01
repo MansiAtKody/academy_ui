@@ -17,7 +17,7 @@ class CommonButton extends StatelessWidget with Constant {
   final bool isEnable;
   final double? padding;
   final FontWeight? fontWeight;
-  final Icon? icon;
+  final String? img;
 
   CommonButton(
       {Key? key,
@@ -32,7 +32,7 @@ class CommonButton extends StatelessWidget with Constant {
       this.padding,
       this.isEnable = true,
       this.fontWeight,
-      this.icon,
+      this.img,
       this.textSize})
       : super(key: key);
 
@@ -65,8 +65,11 @@ class CommonButton extends StatelessWidget with Constant {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // icon:Icon(icon),
-                  Text(
+//                Container(height: 16.h,width: 16.w,
+//                    child: Image(image: AssetImage(img?? ""))),
+//
+// SizedBox(width: 10.w,),
+          Text(
                     label,
                     textAlign: TextAlign.center,
                     style: TextStyle(
